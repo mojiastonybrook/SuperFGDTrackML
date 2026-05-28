@@ -10,6 +10,7 @@ The code was developed using Python 3.10.4 and PyTorch 1.11.0. The datasets and 
     .
     ├── README.md
     ├── jobs
+        |
     ├── fitting_algorithms
     │   ├── __init__.py
     │   ├── rnn.py
