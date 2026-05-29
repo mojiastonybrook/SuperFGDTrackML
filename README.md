@@ -41,7 +41,7 @@ The code was developed using Python 3.10.4 and PyTorch 1.11.0. Set up the python
 To install conda, please check for more information.
 
 With conda, install Python 3.10.4 by:
-- `conda create --name py3104_env -c anaconda python=3.10.4`
+- ```conda create --name py3104_env -c anaconda python=3.10.4```
 
 Activate this envrionment by:
 -`conda activate py3104_env`
