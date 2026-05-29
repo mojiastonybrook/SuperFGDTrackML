@@ -46,17 +46,24 @@ With conda, install Python 3.10.4 by:
   ```
 
 Activate this envrionment by:
--`conda activate py3104_env`
+- ```
+  conda activate py3104_env
+  ```
 
 Install PyTorch 1.11.0 with pip:
-- `pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu113`
+- ```
+  pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu113
+  ```
 
 Install numpy with pip:
-- `pip install numpy==1.26.4`
+- ```
+  pip install numpy==1.26.4
+  ```
 
 Inside the `trajectory_fitting-main` directory, create a folder to hold the training outputs:
-- `mkdir models`
-
+- ```
+  mkdir models
+  ```
 
 The datasets can be found on nnhome space here: [Zenodo](https://doi.org/10.5281/zenodo.10998285).
 
