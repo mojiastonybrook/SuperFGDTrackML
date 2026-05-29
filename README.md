@@ -69,7 +69,7 @@ The datasets can be found on nnhome storage space here: `/storage/shared/chiaki/
 
 ## How to run the code
 
-### Interactive 
+### Interactive jobs
 
 To run the code interactively, first is to log into a computation node with GPU: 
 - ```
@@ -87,5 +87,19 @@ To aviod errors about package import, the scripts should be run inside the `traj
 
 If you try to run the scripts directly from their folders (e.g., python nn_training/train_rnn.py), you may get an error about an attempted relative import with no known parent package.
 
-### Remote job
+### Remote jobs
 
+To run the code with remote jobs, change directory to `jobs` and make necessary modifications to a `.sh` script. Submit the shell script by:
+- ```
+  sbatch run_train_trans_model.sh 
+  ```
+
+### Trainning setup
+
+The common training settings are stored in `trajectory_fitting-main/modules/constants.py`. 
+
+Here are a few key variables in the set up:
+- `TRAINING_DATASET` the directory to the dataset;
+- `NUM_EPOCH` the number of total epochs in training;
+- `BATCH_SIZE` the size for one batch of input samples.
+   
