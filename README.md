@@ -81,9 +81,11 @@ On the node always activate the right pythonic environment before trainning:
   ```
 
 To aviod errors about package import, the scripts should be run inside the `trajectory_fitting-main` folder:
+- `cd INSTALLL_DIR/trajectory_fitting-main` to change directory to the correct one.
 - `python -m nn_training.train_rnn` to train the RNN model.
 - `python -m nn_training.train_transformer` to train the Transformer model.
 
 If you try to run the scripts directly from their folders (e.g., python nn_training/train_rnn.py), you may get an error about an attempted relative import with no known parent package.
 
+### Remote job
 
