@@ -89,7 +89,9 @@ If you try to run the scripts directly from their folders (e.g., python nn_train
 
 ### Remote jobs
 
-To run the code with remote jobs, change directory to `jobs` and make necessary modifications to a `.sh` script. Submit the shell script by:
+To run the code with remote jobs, change directory to `jobs` and make necessary modifications to a `.sh` script according to user demands. 
+
+Submit the shell script by:
 - ```
   sbatch run_train_trans_model.sh 
   ```
