@@ -36,9 +36,9 @@ It is modified to accomandate the computational environment of the nnhome cluste
 
 ## How to install the trajectory fitter on a nnhome cluster
 
-The code was developed using Python 3.10.4 and PyTorch 1.11.0. Set up the python environment by conda.
+The code was developed using Python 3.10.4 and PyTorch 1.11.0. Set up the python environment by anaconda.
 
-To install conda, please check for more information.
+To install anaconda, please check [Linux installer](https://www.anaconda.com/docs/getting-started/anaconda/install/linux-install#terminal) for more information.
 
 With conda, install Python 3.10.4 by:
 - ```
@@ -65,7 +65,7 @@ Inside the `trajectory_fitting-main` directory, create a folder to hold the trai
   mkdir models
   ```
 
-The datasets can be found on nnhome space here: [Zenodo](https://doi.org/10.5281/zenodo.10998285).
+The datasets can be found on nnhome storage space here: `/storage/shared/chiaki/superFGD/training`.
 
 ## How to run the code
 
