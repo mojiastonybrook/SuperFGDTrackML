@@ -69,10 +69,18 @@ The datasets can be found on nnhome storage space here: `/storage/shared/chiaki/
 
 ## How to run the code
 
-To run the code, you need to have Python 3.10.4 and PyTorch 1.11.0 installed. The datasets and checkpoints can be downloaded from https://doi.org/10.5281/zenodo.10998285.
+### Interactive 
 
-The scripts that should be run are:
+To run the code interactively, first is to log into a computation node with GPU: 
+- ```
+  srun --gres=gpu --x11 --pty bash -i
+  ```
+On the node always activate the right pythonic environment before trainning:
+- ```
+  conda activate py3104_env
+  ```
 
+To aviod errors about package import, the scripts should be run inside the `trajectory_fitting-main` folder:
 - `python -m nn_training.train_rnn` to train the RNN model.
 - `python -m nn_training.train_transformer` to train the Transformer model.
 
