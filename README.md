@@ -36,10 +36,27 @@ It is modified to accomandate the computational environment of the nnhome cluste
 
 ## How to install the trajectory fitter on a nnhome cluster
 
-The code was developed using Python 3.10.4 and PyTorch 1.11.0. 
+The code was developed using Python 3.10.4 and PyTorch 1.11.0. Set up the python environment by conda.
 
-The datasets and checkpoints can be found here: [Zenodo](https://doi.org/10.5281/zenodo.10998285).
+To install conda, please check for more information.
 
+With conda, install Python 3.10.4 by:
+- `conda create --name py3104_env -c anaconda python=3.10.4`
+
+Activate this envrionment by:
+-`conda activate py3104_env`
+
+Install PyTorch 1.11.0 with pip:
+- `pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu113`
+
+Install numpy with pip:
+- `pip install numpy==1.26.4`
+
+Inside the `trajectory_fitting-main` directory, create a folder to hold the training outputs:
+- `mkdir models`
+
+
+The datasets can be found on nnhome space here: [Zenodo](https://doi.org/10.5281/zenodo.10998285).
 
 ## How to run the code
 
