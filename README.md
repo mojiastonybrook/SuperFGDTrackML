@@ -94,7 +94,7 @@ To run the code with remote jobs, change directory to `jobs` and make necessary 
   sbatch run_train_trans_model.sh 
   ```
 
-### Trainning setup
+## Trainning setup
 
 The common training settings are stored in `trajectory_fitting-main/modules/constants.py`. 
 
