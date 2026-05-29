@@ -20,9 +20,9 @@ It is modified to accomandate the computational environment of the nnhome cluste
         │   ├── constants.py
         │   └── dataset.py
         ├── nn_training
-            ├── __init__.py
-            ├── train_rnn.py
-            └── train_transformer.py
+        │   ├── __init__.py
+        │   ├── train_rnn.py
+        │   └── train_transformer.py
         └── models
             └──
  
