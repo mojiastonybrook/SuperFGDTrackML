@@ -105,3 +105,31 @@ Here are a few key variables in the set up:
 - `NUM_EPOCH` the number of total epochs in training;
 - `BATCH_SIZE` the size for one batch of input samples.
    
+## Changes for GPU memory optimization
+
+The majority of code is the same as the original repository, but with specific minor modifications to optimize the GPU memory comsupation for deployment on nnhome clusters.
+Most of the changes are made for the training of a transformer model since it comsumes more memory compared to training a RNN model.
+
+The key optimizations include:
+- Use mixed precision of tensors with `torch.cuda.amp.autocast()` function, for example, [nn_training/train_transformer.py #L53](https://github.com/mojiastonybrook/SuperFGDTrackML/blob/0fb7b84400ea36ea32b53b91001a911f35fa3620/trajectory_fitting-main/nn_training/train_transformer.py#L53)
+  ```
+  def train_epoch(model, optim, disable_tqdm):
+      ...
+  
+      with torch.cuda.amp.autocast():
+          for i, data in t:
+              ...
+
+      return ...
+  ```
+- Reduce batchsize, [modules/constants.py #L37](https://github.com/mojiastonybrook/SuperFGDTrackML/blob/0fb7b84400ea36ea32b53b91001a911f35fa3620/trajectory_fitting-main/modules/constants.py#L37)
+  `BATCH_SIZE = 16`
+- Reduce number of parallel  workers in dataloader, for example [nn_training/train_transformer.py #L135](https://github.com/mojiastonybrook/SuperFGDTrackML/blob/0fb7b84400ea36ea32b53b91001a911f35fa3620/trajectory_fitting-main/nn_training/train_transformer.py#L135)
+  ```
+  train_loader = DataLoader(train_set, collate_fn=collate_fn, batch_size=BATCH_SIZE,
+                          num_workers=1, shuffle=True)
+  ```
+- Set PyTorch memory allocator option by
+  `export PYTORCH_CUDA_ALLOC_CONF=max_split_size_mb:32`.
+
+  It could be done in a job script as [https://github.com/mojiastonybrook/SuperFGDTrackML/blob/0fb7b84400ea36ea32b53b91001a911f35fa3620/jobs/run_train_trans_model.sh#L10](https://github.com/mojiastonybrook/SuperFGDTrackML/blob/0fb7b84400ea36ea32b53b91001a911f35fa3620/jobs/run_train_trans_model.sh#L10)
