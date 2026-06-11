@@ -133,3 +133,5 @@ The key optimizations include:
   `export PYTORCH_CUDA_ALLOC_CONF=max_split_size_mb:32`.
 
   It could be done in a job script as [https://github.com/mojiastonybrook/SuperFGDTrackML/blob/0fb7b84400ea36ea32b53b91001a911f35fa3620/jobs/run_train_trans_model.sh#L10](https://github.com/mojiastonybrook/SuperFGDTrackML/blob/0fb7b84400ea36ea32b53b91001a911f35fa3620/jobs/run_train_trans_model.sh#L10)
+
+  or interactively set this environment vaiable in terminal before executing training.
